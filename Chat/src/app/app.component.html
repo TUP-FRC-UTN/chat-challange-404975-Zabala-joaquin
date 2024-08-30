@@ -1,0 +1,9 @@
+<app-mensajes
+ (mensajeUser1)="obtenerMensajesPepe($event)"
+ (mensajeUser2)="obtenerMensajesMaria($event)"></app-mensajes>
+
+    @for (mensaje of mensajes; track $index) {
+    
+        <li>{{mensaje.user}} : {{mensaje.mensaje}}</li>
+    
+    }
