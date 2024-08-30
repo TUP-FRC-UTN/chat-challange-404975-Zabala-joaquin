@@ -12,6 +12,8 @@ import { UserMessage } from './models/userMessage';
 })
 export class AppComponent {
   title = 'Chat';
+  usario1:string = 'Pepe'
+  usario2:string = 'Maria'
 
   mensajes : UserMessage[] = [];
 

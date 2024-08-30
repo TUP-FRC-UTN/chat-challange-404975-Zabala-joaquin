@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output , Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UserMessage } from '../models/userMessage';
 
@@ -16,8 +16,9 @@ export class MensajesComponent {
   @Output() mensajeUser1 = new EventEmitter<UserMessage>();
   @Output() mensajeUser2 = new EventEmitter<UserMessage>();
 
-  userName1 = "Pepe"
-  userName2 = "Maria"
+ 
+ @Input() usuario1 : string = ""
+ @Input() usuario2 = "Maria"
 
   mensajePepe = ""
   mensajeMaria = ""
@@ -26,7 +27,7 @@ export class MensajesComponent {
   public enviarUser1(): void {
 
     const mensajePepe: UserMessage = {
-      user :  this.userName1,
+      user :  this.usuario1,
       mensaje: this.mensajePepe
     }
 
@@ -36,7 +37,7 @@ export class MensajesComponent {
   public enviarUser2(){
     
     const mensajeMaria : UserMessage ={
-      user : this.userName2,
+      user : this.usuario2,
       mensaje : this.mensajeMaria
     }
 
